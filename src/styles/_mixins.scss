@@ -1,0 +1,50 @@
+@use './media' as *;
+@use './variables' as *;
+
+@mixin fluid-text($max, $min) {
+    font-size: clamp(#{$min}px, calc(#{$max} / $desktop * 100vw), #{$max}px);
+}
+
+@mixin fluid-column-gap($max, $min) {
+    column-gap: clamp(#{$min}px, calc(#{$max} / $desktop * 100vw), #{$max}px);
+}
+// column-gap: clamp(
+//     #{$min-gap}px,
+//     calc(#{$max-gap} / #{$desktop} * 100vw),
+//     #{$max-gap}px
+// );
+
+@mixin fluid-raw-gap($max, $min) {
+    row-gap: clamp(#{$min}px, calc(#{$max} / $desktop * 100vw), #{$max}px);
+}
+
+@mixin container {
+    padding-left: $padding-page-desktop;
+    padding-right: $padding-page-desktop;
+
+    @include media(tablet) {
+        padding-left: $padding-page-tablet;
+        padding-right: $padding-page-tablet;
+    }
+
+    @include media(mobile) {
+        padding-left: $padding-page-mobile;
+        padding-right: $padding-page-mobile;
+    }
+}
+
+@mixin hover {
+    @media (hover: hover) {
+        &:hover {
+            @content;
+        }
+    }
+}
+
+@mixin hover-none {
+    @media (hover: none) {
+        &:active {
+            @content;
+        }
+    }
+}

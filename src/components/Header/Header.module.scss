@@ -1,0 +1,101 @@
+@use '../../styles/importer' as *;
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f6f6f6;
+    gap: 15px;
+    padding-bottom: 40px;
+    margin-bottom: 37px;
+
+    @include container;
+
+    @include media(tablet) {
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+        padding-top: 15px;
+    }
+
+    @include media(mobile) {
+        flex-direction: column;
+        // align-items: flex-end;
+        gap: 15px;
+    }
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    background-color: transparent;
+    border: none;
+    text-align: start;
+    cursor: pointer;
+
+    @include media(mobile) {
+        justify-content: center;
+        font-size: 40px;
+    }
+
+    &__text {
+        h2 {
+            color: #181818;
+            font-weight: 800;
+            letter-spacing: 0.01em;
+            font-size: 24px;
+
+            @include media(mobile) {
+                font-size: 32px;
+            }
+        }
+        p {
+            font-weight: 400;
+            color: #7b7b7b;
+            font-size: 16px;
+        }
+    }
+}
+
+.cartButton {
+    color: #fff;
+    background-color: $color-orange;
+    border-radius: $border-radius-button;
+    border: none;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.2s;
+    white-space: nowrap;
+
+    @include hover {
+        background-color: $color-orange-hover;
+    }
+
+    @include hover-none {
+        background-color: $color-orange-hover;
+    }
+
+    &__left {
+        font-weight: 700;
+        display: inline-flex;
+        display: flex;
+        align-items: center;
+    }
+
+    &__left::after {
+        content: '';
+        display: block;
+        height: 25px;
+        width: 1px;
+        background-color: #ffffff40;
+        margin: 0 10px;
+    }
+
+    .cartButton__rigth {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+}

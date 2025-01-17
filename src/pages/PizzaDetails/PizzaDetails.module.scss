@@ -1,0 +1,105 @@
+@use '../../styles/importer' as *;
+
+.pizzaDetails {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 30px;
+    border: 1px solid $color-grey;
+    border-radius: 10px;
+    background-color: $color-ligth;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    flex-grow: 1;
+    color: $color-black;
+    width: 100%;
+    background-color: $color-ligth;
+
+    @include media(tablet) {
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    &__image {
+        min-width: 40%;
+        border-radius: 10px;
+
+        & img {
+            width: 100%;
+            border-radius: 10px;
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 15px;
+        max-width: 500px;
+    }
+
+    &__description {
+        font-size: 18px;
+        color: $color-dark;
+        text-align: center;
+        text-align: left;
+    }
+
+    &__info {
+        text-align: left;
+        color: $color-dark;
+        background-color: #f3f3f3;
+        padding: 20px;
+        border-radius: 10px;
+
+        & strong {
+            color: $color-orange-hover;
+        }
+
+        p {
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    &__rating {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: $color-orange;
+        font-size: 26px;
+        font-weight: 700;
+    }
+
+    &__price {
+        font-size: 22px;
+        font-weight: 700;
+        align-self: center;
+
+        & b {
+            color: $color-orange;
+        }
+    }
+
+    &__actions {
+        display: flex;
+        gap: 10px;
+        justify-content: space-between;
+        margin-top: 40px;
+
+        @include media(tablet) {
+            margin-top: 20px;
+        }
+
+        @include media(mobile) {
+            flex-direction: column-reverse;
+        }
+    }
+}
+
+.button {
+    max-width: 100%;
+}

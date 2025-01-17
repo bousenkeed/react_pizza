@@ -1,0 +1,98 @@
+@use '../../../styles/importer' as *;
+
+.sort {
+    position: relative;
+
+    &__label {
+        display: flex;
+        align-items: flex-end;
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+        white-space: nowrap;
+
+        & img {
+            transition: 0.3s;
+            padding: 8px;
+
+            &.arrowActive {
+                transform: rotate(180deg) scale(1.2);
+            }
+        }
+
+        & b {
+            letter-spacing: 0.01em;
+            font-weight: 700;
+            color: $color-dark;
+            margin-right: 8px;
+        }
+
+        & span {
+            letter-spacing: 0.01em;
+            font-weight: 400;
+            color: $color-orange;
+            border-bottom: 1px dashed $color-orange;
+            transition: 0.2s;
+        }
+
+        &:hover span {
+            color: $color-orange-hover;
+        }
+    }
+}
+
+.dropdownMenu {
+    background-color: $color-ligth;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.09);
+    position: absolute;
+    top: 100% + 20;
+    right: 0;
+    padding: 15px 0;
+    min-width: 150px;
+    z-index: 10;
+
+    &__item {
+        border: none;
+        background-color: transparent;
+        font-weight: 400;
+        font-size: 14px;
+        letter-spacing: 0.01em;
+        color: #000;
+        padding: 10px 14px;
+        white-space: nowrap;
+        cursor: pointer;
+        width: 100%;
+        text-align: start;
+        transition: 0.2s;
+
+        &:hover {
+            background-color: #fe5f1e0d;
+        }
+
+        &.selected {
+            color: $color-orange;
+            background-color: #fe5f1e0d;
+            font-weight: 700;
+        }
+    }
+}
+
+.fadeEnter {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+.fadeEnterActive {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 300ms, transform 300ms;
+}
+.fadeExit {
+    opacity: 1;
+    transform: translateY(0);
+}
+.fadeExitActive {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 300ms, transform 300ms;
+}

@@ -1,0 +1,18 @@
+@use '../../styles/importer' as *;
+
+.footer {
+    padding: 20px;
+    background-color: $color-orange;
+    color: $color-ligth;
+    margin-top: 80px;
+    font-size: 30px;
+    border-radius: 0 0 10px 10px;
+
+    @include media(mobile) {
+        margin-top: 40px;
+    }
+
+    @include media(mobile) {
+        border-radius: 0;
+    }
+}

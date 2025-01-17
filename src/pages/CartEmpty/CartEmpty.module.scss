@@ -1,0 +1,68 @@
+@use '../../styles/importer' as *;
+
+.CartEmpty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    height: 100%;
+    padding-top: 50px;
+
+    @include media(tablet) {
+        padding-top: 0;
+    }
+
+    & h1 {
+        margin-bottom: 10px;
+    }
+
+    & p {
+        color: #777;
+        line-height: 1.45;
+        max-width: 550px;
+        text-align: center;
+        margin-bottom: 50px;
+
+        @include fluid-text(18, 16);
+    }
+
+    & img {
+        max-width: 300px;
+        margin-bottom: 75px;
+    }
+}
+
+.button {
+    @include media(mobile-s) {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+.modal {
+    height: 100%;
+    width: 100%;
+    background-color: #0000007c;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.modal__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    background-color: white;
+    border: $border-radius-button;
+    padding: 30px;
+
+    & p {
+        margin-bottom: 20px;
+        font-size: 26px;
+    }
+
+    & button {
+        margin: 0 auto;
+    }
+}

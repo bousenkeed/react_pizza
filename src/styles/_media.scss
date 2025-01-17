@@ -1,0 +1,24 @@
+$desktop: 1270;
+$tablet: 1023;
+$mobile: 767;
+$mobile-s: 479;
+
+@mixin media($breakpoint) {
+    @if $breakpoint == desktop {
+        @media (max-width: #{$desktop}px) {
+            @content;
+        }
+    } @else if $breakpoint == tablet {
+        @media (max-width: #{$tablet}px) {
+            @content;
+        }
+    } @else if $breakpoint == mobile {
+        @media (max-width: #{$mobile}px) {
+            @content;
+        }
+    } @else if $breakpoint == mobile-s {
+        @media (max-width: #{$mobile-s}px) {
+            @content;
+        }
+    }
+}

@@ -1,0 +1,51 @@
+@use '../../styles/importer' as *;
+
+.search {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: $gap-Y-desktop;
+
+    @include media(tablet) {
+        gap: $gap-Y-tablet;
+    }
+
+    &__top {
+        display: flex;
+        gap:15px;
+        align-items: flex-start;
+        justify-content: space-between;
+        & h1 {
+            margin-bottom: 20px;
+        }
+
+        & b {
+            display: block;
+            @include fluid-text(22, 16);
+
+            & > span {
+                color: $color-orange;
+            }
+        }
+    }
+
+    &__noMatches {
+        height: 100%;
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include fluid-text(20, 16);
+        text-align: center;
+
+        & span {
+            color: $color-orange;
+            font-weight: 700;
+        }
+    }
+}
+
+.moreButton {
+    margin: 0 auto;
+}

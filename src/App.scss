@@ -1,0 +1,35 @@
+@use './styles/importer' as *;
+
+.app {
+    background-color: $color-ligth;
+    border-radius: 10px;
+    margin: $margin-page-desktop;
+    padding-top: $padding-page-desktop;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    @include media(tablet) {
+        margin: $margin-page-tablet;
+        padding-top: $padding-page-tablet;
+    }
+
+    @include media(mobile) {
+        margin: 0;
+        padding-top: $padding-page-mobile;
+        border-radius: 0;
+    }
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: $gap-Y-desktop;
+    flex-grow: 1;
+
+    @include container;
+    
+    @include media(tablet) {
+        gap: $gap-Y-tablet;
+    }
+}

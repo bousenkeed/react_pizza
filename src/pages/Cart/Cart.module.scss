@@ -1,0 +1,131 @@
+@use '../../styles/importer' as *;
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    flex-grow: 1;
+}
+
+.cart {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 821px;
+    width: 100%;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+        margin-top: 60px;
+        border-bottom: 1px solid #f4f4f4;
+        padding-bottom: 30px;
+
+        @include media(tablet) {
+            margin-top: 0;
+        }
+
+        @include media(mobile-s) {
+            flex-direction: column;
+        }
+    }
+
+    &__title {
+        display: flex;
+        gap: 17px;
+        align-items: flex-start;
+    }
+
+    &__bucket {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        cursor: pointer;
+        color: #b6b6b6;
+        border: none;
+        background-color: transparent;
+
+        & svg path {
+            transition: 0.2s;
+        }
+
+        & span {
+            transition: 0.2s;
+        }
+
+        @include hover {
+            & svg path {
+                stroke: $color-dark;
+                animation: shake 0.4s ease-in-out infinite;
+            }
+
+            & span {
+                color: $color-dark;
+            }
+        }
+
+        @include hover-none {
+            & svg path {
+                stroke: $color-dark;
+                animation: shake 0.4s ease-in-out infinite;
+            }
+
+            & span {
+                color: $color-dark;
+            }
+        }
+    }
+
+    &__sum {
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+        letter-spacing: 0.01em;
+        color: $color-black;
+
+        @include fluid-text(22, 18);
+
+        @include media(mobile) {
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        & b {
+            font-weight: 700;
+        }
+
+        & b.aсcent {
+            color: $color-orange;
+        }
+    }
+
+    &__actions {
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+
+        @include media(mobile-s) {
+            flex-direction: column-reverse;
+        }
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+    75% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}

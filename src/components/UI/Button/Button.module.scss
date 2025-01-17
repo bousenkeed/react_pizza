@@ -1,0 +1,75 @@
+@use '../../../styles/importer' as *;
+
+.button {
+    border-radius: $border-radius-button;
+    padding: 16px 0;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    max-width: 211px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    transition: 0.2s;
+}
+
+.primary {
+    border: none;
+    background-color: $color-orange;
+    color: $color-ligth;
+
+    @include hover {
+        background-color: $color-orange-hover;
+    }
+
+    @include hover-none {
+        background-color: $color-orange-hover;
+    }
+}
+
+.return {
+    background-color: transparent;
+    outline: 1px solid #cacaca;
+    color: #cacaca;
+    transition: 0.2s;
+
+    & svg {
+        transition: 0.3s;
+        translate: 0 -1px;
+    }
+
+    & svg path {
+        transition: 0.2s;
+    }
+
+    @include hover {
+        background-color: $color-dark;
+        outline: none;
+
+        & svg {
+            translate: -6px -1px;
+            scale: 1.2;
+        }
+
+        & svg path {
+            stroke: #a4a4a4;
+        }
+    }
+
+    @include hover-none {
+        background-color: $color-dark;
+        outline: none;
+
+        & svg {
+            translate: -6px -1px;
+            scale: 1.2;
+        }
+
+        & svg path {
+            stroke: #a4a4a4;
+        }
+    }
+}

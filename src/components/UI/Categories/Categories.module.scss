@@ -1,0 +1,37 @@
+@use '../../../styles/importer' as *;
+
+.filters {
+    display: flex;
+    gap: 9px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: auto;
+
+    @include media(mobile) {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    & button {
+        background-color: $color-grey;
+        border: none;
+        padding: 15px 30px;
+        font-size: 16px;
+        color: $color-dark;
+        cursor: pointer;
+        border-radius: 30px;
+        transition: 0.2s;
+
+        &:not(.active):hover {
+            background-color: #dedede;
+        }
+
+        &.active {
+            background-color: #282828;
+            color: #fff;
+        }
+    }
+}

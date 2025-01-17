@@ -1,0 +1,69 @@
+@use '../../../styles/importer' as *;
+
+.ActionButton {
+    border-radius: 50%;
+    border: 1px solid $color-orange;
+    height: 32px;
+    width: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-ligth;
+    cursor: pointer;
+    transition: 0.2s;
+
+    & svg {
+        width: 9px;
+        height: 9px;
+    }
+
+    @include hover {
+        background-color: $color-orange;
+    }
+
+    @include hover-none {
+        background-color: $color-orange;
+    }
+
+    &.plusMinus {
+        @include hover {
+            svg path {
+                fill: $color-ligth;
+            }
+        }
+    }
+
+    &.plusMinus {
+        @include hover-none {
+            svg path {
+                fill: $color-ligth;
+            }
+        }
+    }
+
+    &.remove {
+        border-color: #d7d7d7;
+    }
+
+    &.remove {
+        @include hover {
+            background-color: $color-dark;
+            border: none;
+
+            & svg path {
+                fill: $color-ligth;
+            }
+        }
+    }
+
+    &.remove {
+        @include hover-none {
+            background-color: $color-dark;
+            border: none;
+
+            & svg path {
+                fill: $color-ligth;
+            }
+        }
+    }
+}

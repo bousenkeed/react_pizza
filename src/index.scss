@@ -1,0 +1,16 @@
+@use './styles/normalize.css';
+@use './styles/fonts.css';
+@use './styles/importer' as *;
+
+body {
+    margin: 0 auto;
+    font-family: 'Nunito', sans-serif;
+    background-color: $color-bg;
+    max-width: 1440px;
+}
+
+h1 {
+    font-weight: 700px;
+
+    @include fluid-text(36, 24);
+}

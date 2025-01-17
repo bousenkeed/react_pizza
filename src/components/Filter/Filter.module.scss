@@ -1,0 +1,28 @@
+@use '../../styles/importer' as *;
+
+.filter {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: center;
+
+    @include media(desktop) {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    // @include media(tablet) {
+    //     flex-direction: column;
+    //     gap: 15px;
+    // }
+
+    @include media(mobile) {
+        align-items: stretch;
+    }
+}
+
+.sortContainer {
+    @include media(desktop) {
+        align-self: flex-end;
+    }
+}

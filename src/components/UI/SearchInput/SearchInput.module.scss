@@ -1,0 +1,58 @@
+@use '../../../styles/importer' as *;
+
+.search {
+    max-width: 350px;
+    flex-grow: 1;
+    position: relative;
+    margin-left: auto;
+
+    @include media(mobile) {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    &__input {
+        font-size: 16px;
+        padding: 12px 44px 12px 16px;
+        color: $color-black;
+        border: none;
+        border-radius: 5px;
+        outline: 1px solid #dbdbdb;
+        width: 100%;
+        transition: 0.2s;
+
+        &::placeholder {
+            color: #d5d5d5;
+            transition: 0.2s;
+        }
+
+        &:focus {
+            outline: 1px solid #8d8d8d;
+        }
+
+        &:focus::placeholder {
+            color: #8d8d8d;
+        }
+    }
+
+    & svg {
+        fill: #dbdbdb;
+        transition: 0.2s ease;
+    }
+
+    &__submit {
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        translate: 0 -50%;
+        right: 10px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__input:focus + &__submit svg {
+        fill: $color-orange;
+    }
+}

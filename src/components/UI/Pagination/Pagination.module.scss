@@ -1,0 +1,59 @@
+@use '../../../styles/importer' as *;
+
+$gap: 20px;
+$buttonWidth: 28px;
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    &__buttons {
+        color: $color-black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: $gap;
+        position: relative;
+
+        & button {
+            background-color: $color-ligth;
+            border: 1px solid $color-orange;
+            color: $color-orange;
+            cursor: pointer;
+            width: $buttonWidth;
+            height: $buttonWidth;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            opacity: 0.7;
+            transition: 0.2s;
+
+            @include hover {
+                background-color: $color-orange;
+                color: $color-ligth;
+            }
+
+            @include hover-none {
+                background-color: $color-orange;
+                color: $color-ligth;
+            }
+
+            &.active {
+                background-color: $color-orange;
+                color: $color-ligth;
+            }
+        }
+    }
+}
+
+.previousButton {
+    position: absolute;
+    left: -$gap;
+    translate: -100% 0;
+}
+.nextButton {
+    position: absolute;
+    right: -$gap;
+    translate: 100% 0;
+}

@@ -1,0 +1,87 @@
+@use '../../styles/importer' as *;
+
+.PizzaCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 350px;
+
+    & img {
+        max-width: 350px;
+        width: 100%;
+        cursor: pointer;
+    }
+
+    & h3 {
+        font-weight: 800;
+        font-size: 20px;
+        letter-spacing: 0.01em;
+        text-align: center;
+        color: $color-black;
+        margin-bottom: 22px;
+        cursor: pointer;
+    }
+}
+
+.form {
+    width: 100%;
+
+    &__price {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-top: 17px;
+
+        @include media(desktop) {
+            justify-content: space-around;
+        }
+
+        & span {
+            font-weight: 700;
+            font-size: 22px;
+            letter-spacing: 0.01em;
+            color: $color-black;
+        }
+
+        & button {
+            padding: 12px 18px;
+            background-color: $color-ligth;
+            font-weight: 700;
+            font-size: 16px;
+            color: $color-orange;
+            border: 1px solid $color-orange;
+            border-radius: $border-radius-button;
+            cursor: pointer;
+            transition: 0.2s;
+
+            @include hover {
+                background-color: $color-orange;
+                color: $color-ligth;
+
+                svg path {
+                    fill: $color-ligth;
+                }
+            }
+
+            @include hover-none {
+                background-color: $color-orange;
+                color: $color-ligth;
+                transition: 0s;
+
+                svg path {
+                    fill: $color-ligth;
+                    transition: 0s;
+                }
+            }
+
+            & svg {
+                margin-right: 7px;
+                transition: 0.2s;
+                fill: $color-orange;
+            }
+        }
+    }
+}
