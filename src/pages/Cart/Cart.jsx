@@ -32,7 +32,7 @@ function Cart() {
     };
 
     if (totalItems === 0) {
-        return <CartEmpty isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}/>;
+        return <CartEmpty isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />;
     }
 
     return (
@@ -94,13 +94,17 @@ function Cart() {
                 </div>
                 <div className={styles.cart__actions}>
                     <Button
-                        className={styles.buttonReturn}
+                        className={styles.button}
                         variant="return"
                         onClick={returnToPreviousPage}
                     >
                         Вернуться назад
                     </Button>
-                    <Button type="submit" onClick={handleOrderPizzas}>
+                    <Button
+                        type="submit"
+                        className={styles.button}
+                        onClick={handleOrderPizzas}
+                    >
                         Оплатить сейчас
                     </Button>
                 </div>

@@ -32,7 +32,6 @@ const PizzaDetails = () => {
                 setActiveType(pizza.types[0]);
                 setActiveSize(pizza.sizes[0]);
                 setActivePrice(pizza.prices[0]);
-
             } catch (error) {
                 console.error('Ошибка при загрузке данных:', error);
             }
@@ -83,7 +82,7 @@ const PizzaDetails = () => {
                     <p>
                         <strong>Состав:</strong> {ingredients.join(', ')}
                     </p>
-                    <p>
+                    <div className={styles.pizzaDetails__raitingContainer}>
                         <strong>Рейтинг:</strong>
                         <span className={styles.pizzaDetails__rating}>
                             {rating} / 10
@@ -92,7 +91,7 @@ const PizzaDetails = () => {
                                 {'☆'.repeat(Math.round(10 - rating))}
                             </span>
                         </span>
-                    </p>
+                    </div>
                 </div>
                 <RadioGroup
                     activeType={activeType}

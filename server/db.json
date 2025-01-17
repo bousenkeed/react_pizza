@@ -583,5 +583,16 @@
       "rating": 9
     }
   ],
-  "cart": []
+  "cart": [
+    {
+      "id": "1_тонкое_26",
+      "imageUrl": "http://localhost:3004/images/pizza/2.png",
+      "title": "Сырная",
+      "type": "тонкое",
+      "size": 26,
+      "price": 359,
+      "pizzaId": 1,
+      "count": 1
+    }
+  ]
 }

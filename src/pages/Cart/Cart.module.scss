@@ -109,6 +109,12 @@
         @include media(mobile-s) {
             flex-direction: column-reverse;
         }
+
+        .button {
+            @include media(mobile-s) {
+                max-width: 100%;
+            }
+        }
     }
 }
 

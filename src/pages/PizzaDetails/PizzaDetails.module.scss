@@ -20,6 +20,7 @@
     @include media(tablet) {
         flex-direction: column;
         justify-content: flex-end;
+        padding: 15px;
     }
 
     &__image {
@@ -65,6 +66,17 @@
         }
     }
 
+    &__raitingContainer {
+        display: flex;
+        gap: 5px;
+        flex-direction: column;
+
+        @include media(mobile-s) {
+            align-items: center;
+            flex-direction: row;
+        }
+    }
+
     &__rating {
         display: flex;
         align-items: center;
@@ -72,6 +84,14 @@
         color: $color-orange;
         font-size: 26px;
         font-weight: 700;
+
+        @include fluid-text(26, 22);
+    }
+
+    &__stars {
+        @include media(mobile-s) {
+            display: none;
+        }
     }
 
     &__price {

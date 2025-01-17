@@ -54,12 +54,14 @@
     left: 50%;
     translate: -50% -50%;
     background-color: white;
-    border: $border-radius-button;
+    border-radius: 20px;
     padding: 30px;
+    min-width: 320px;
 
     & p {
         margin-bottom: 20px;
-        font-size: 26px;
+
+        @include fluid-text(26, 18)
     }
 
     & button {
