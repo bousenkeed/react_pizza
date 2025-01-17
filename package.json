@@ -18,8 +18,9 @@
     "sass": "^1.82.0"
   },
   "scripts": {
-    "server": "json-server --watch server/db.json --port 3004",
     "start": "react-scripts start",
+    "server": "json-server --watch server/db.json --port 3004",
+    "dev": "concurrently \"npm start\" \"npm run server\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -41,5 +42,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
   }
 }
